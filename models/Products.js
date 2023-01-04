@@ -1,6 +1,6 @@
 const { ObjectID } = require("bson");
 const mongoose = require("mongoose");
-
+const validator = require('validator');
 //schema design
 const productSchema = mongoose.Schema({
     imageUrl: [{
@@ -8,7 +8,7 @@ const productSchema = mongoose.Schema({
         required: true,
         validate: [validator.isURL , "Plese Provide valid URL"]
     }],
-    name: {
+    productName: {
       type: String,
       required: [true, "Please provide a name for thid product"],
       trim: true,
