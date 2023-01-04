@@ -1,4 +1,4 @@
-const express = require("express");
+/* const express = require("express");
 const router = new express.Router();
 const multer = require('multer')
 const path = require("path")
@@ -61,4 +61,14 @@ router.post("/product", upload.single("photo"), async (req, res) => {
     }
 });
 
-module.exports = router;
+module.exports = router; */
+
+const express = require("express");
+const router=express.Router()
+const productController=require('../controller/product.controller');
+const productUploader = require("../middlewar/productUploder");
+
+router.route('/product')
+.post(productUploader.single('photo'),productController.createProduct)
+
+module.exports=router;
