@@ -10,6 +10,7 @@ app.use(cors());
 //routes
 const productRoute=require('./routes/product.route')
 const blogRoute=require('./routes/blog.route')
+const checkoutRoute=require('./routes/checkout.route')
 
 
 
@@ -21,6 +22,7 @@ app.get("/", (req, res) => {
 // route colling
 app.use("/api/v1",express.static("./ProductImages"),productRoute)
 app.use("/api/v1",express.static("./blogsImages"),blogRoute)
+app.use("/api/v1",checkoutRoute)
 
 
 

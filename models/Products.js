@@ -13,7 +13,6 @@ const productSchema = mongoose.Schema({
       required: [true, "Please provide a name for thid product"],
       trim: true,
       lowercase:true,
-      unique: [true, "Name must be Unique"],
       minLength: [3, "Name mast be 3 characters"],
       maxLength: [100, "Name is too larges"],
     },
@@ -25,11 +24,17 @@ const productSchema = mongoose.Schema({
       type:String,
       require:true,
     },
+    quantity:{
+      type: Number,
+      require: true,
+      min: [0, "product price can not Nagative"]
+    },
     price: {
         type: Number,
         require: true,
         min: [0, "product price can not Nagative"]
     },
+
     
   }, {
     timestamps: true

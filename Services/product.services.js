@@ -4,9 +4,7 @@ exports.productsService = async (filters,queries) => {
     const result = await products.find(filters)
     .sort(queries.sortBy)
     .select(queries.fields)
-    const totalProduct=await products.countDocuments(filters);
-    
-    return {totalProduct,result};
+    return result;
 }
 
 exports.getProductByIdService = async (id) => {

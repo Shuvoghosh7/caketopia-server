@@ -7,9 +7,10 @@ exports.createProduct=async (req, res, next) => {
     const { productName } = req.body;
     const { description } = req.body;
     const { category } = req.body;
+    const { quantity } = req.body;
     const { price } = req.body;
 
-    if (!productName || !description || !category || !price || !filename) {
+    if (!productName || !description || !quantity || !category || !price || !filename) {
         res.status(401).json({ status: 401, message: "fill all the data" })
     }
     try {
@@ -18,6 +19,7 @@ exports.createProduct=async (req, res, next) => {
             productName: productName,
             description: description,
             category: category,
+            quantity: quantity,
             price: price
 
         });
@@ -64,10 +66,7 @@ exports.getProduct=async(req,res,next)=>{
 
 
       const product=await productsService(filters,queries);
-      res.status(200).json({
-        status:"success",
-        data:product 
-      })
+      res.send(product)
     } catch (error) {
       res.status(400).json({
         stauts:"fail",
