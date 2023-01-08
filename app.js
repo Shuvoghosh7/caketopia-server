@@ -11,7 +11,7 @@ app.use(cors());
 const productRoute=require('./routes/product.route')
 const blogRoute=require('./routes/blog.route')
 const checkoutRoute=require('./routes/checkout.route')
-
+const userRoute=require("./routes/user.route")
 
 
 
@@ -23,6 +23,7 @@ app.get("/", (req, res) => {
 app.use("/api/v1",express.static("./ProductImages"),productRoute)
 app.use("/api/v1",express.static("./blogsImages"),blogRoute)
 app.use("/api/v1",checkoutRoute)
+app.use("/api/v1",userRoute)
 
 
 
