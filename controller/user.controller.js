@@ -47,7 +47,7 @@ exports.login = async (req, res, next) => {
             })
         }
 
-        if (user.status != "active") {
+        if (user.status != "Active") {
             return res.status(401).json({
                 stauts: "fail",
                 error: "Your Account is not active",

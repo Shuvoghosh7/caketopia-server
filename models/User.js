@@ -65,7 +65,7 @@ const userSchema = mongoose.Schema({
     },
     status: {
         type: String,
-        enum: ["active", "inactive", "blocked"],
+        enum: ["Active", "Inactive", "Blocked"],
     },
     passwordChangedAt: Date,
     passwordResetToken: String,
