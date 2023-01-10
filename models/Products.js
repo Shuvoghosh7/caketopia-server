@@ -6,7 +6,6 @@ const productSchema = mongoose.Schema({
     imageUrl: [{
         type: String,
         required: true,
-        validate: [validator.isURL , "Plese Provide valid URL"]
     }],
     productName: {
       type: String,
