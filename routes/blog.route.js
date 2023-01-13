@@ -5,5 +5,8 @@ const uploader = require("../middlewar/uploder");
 
 router.route('/blogs')
 .post(uploader.single('image'),blogController.createBlogs)
+.get(blogController.getBlogs)
+router.route('/blogs/:id')
+.get(blogController.getBlogById)
 
 module.exports=router;

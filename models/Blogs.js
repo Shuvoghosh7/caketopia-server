@@ -6,7 +6,7 @@ const blogsSchema = mongoose.Schema({
   imageUrl: [{
     type: String,
     required: true,
-    validate: [validator.isURL, "Plese Provide valid URL"]
+   
   }],
   blogTitle: {
     type: String,
@@ -14,7 +14,7 @@ const blogsSchema = mongoose.Schema({
     trim: true,
     lowercase: true,
     minLength: [3, "Name mast be 3 characters"],
-    maxLength: [100, "Name is too larges"],
+    maxLength: [200, "Name is too larges"],
   },
   description: {
     type: String,
