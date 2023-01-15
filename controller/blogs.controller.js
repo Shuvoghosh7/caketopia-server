@@ -1,12 +1,15 @@
 const { BlogService, getBlogsService, getBlogByIdService } = require("../Services/blog.service")
+
 const Blogs = require("../models/Blogs");
-  exports.createBlogs=async (req, res, next) => {
+
+exports.createBlogs=async (req, res, next) => {
     const { filename } = req.file;
     const { blogTitle } = req.body;
     const { description } = req.body;
+    const { authorName } = req.body;
     const { blogDate } = req.body;
 
-    if (!blogTitle || !description || !blogDate ||!filename) {
+    if (!blogTitle || !description ||!authorName ||!blogDate || !filename) {
         res.status(401).json({ status: 401, message: "fill all the data" })
     }
     try {
@@ -14,6 +17,7 @@ const Blogs = require("../models/Blogs");
             imageUrl: filename,
             blogTitle: blogTitle,
             description: description,
+            authorName:authorName,
             blogDate: blogDate
 
         });

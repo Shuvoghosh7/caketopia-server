@@ -6,7 +6,6 @@ const blogsSchema = mongoose.Schema({
   imageUrl: [{
     type: String,
     required: true,
-   
   }],
   blogTitle: {
     type: String,
@@ -17,6 +16,10 @@ const blogsSchema = mongoose.Schema({
     maxLength: [200, "Name is too larges"],
   },
   description: {
+    type: String,
+    required: true
+  },
+  authorName:{
     type: String,
     required: true
   },
