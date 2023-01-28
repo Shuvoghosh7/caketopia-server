@@ -10,7 +10,6 @@ const productSchema = mongoose.Schema({
     productName: {
       type: String,
       required: [true, "Please provide a name for thid product"],
-      trim: true,
       lowercase:true,
       minLength: [3, "Name mast be 3 characters"],
       maxLength: [100, "Name is too larges"],
